@@ -1,0 +1,23 @@
+---
+// Componente Footer
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-800 text-white py-6 mt-8 border-t border-gray-200">
+  <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 gap-4 text-center md:text-left">
+    <p class="text-gray-300 text-sm" 
+       data-es-template="© YEAR Orange Studios Games - Todos los derechos reservados." 
+       data-en-template="© YEAR Orange Studios Games - All rights reserved.">
+       © {currentYear} Orange Studios Games - Todos los derechos reservados.
+    </p>
+    <div class="flex items-center gap-4 text-sm">
+      <a href="/about" class="text-gray-300 hover:text-orange-500 transition-colors" data-es="Acerca de" data-en="About">Acerca de</a>
+      <span class="text-gray-500">|</span>
+      <a href="/support" class="text-gray-300 hover:text-orange-500 transition-colors" data-es="Soporte" data-en="Support">Soporte</a>
+      <span class="text-gray-500">|</span>
+      <a href="mailto:orangegstudios@gmail.com" class="text-gray-300 hover:text-orange-500 transition-colors" data-es="Contacto" data-en="Contact">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+

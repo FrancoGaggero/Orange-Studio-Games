@@ -1,0 +1,156 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Orange Studios Games - Juegos Educativos y Divertidos</title>
+		<meta name="description" content="Desarrollamos juegos educativos y divertidos para toda la familia. Piano Kids, Magic Board, Sushi Ninja y más." />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="min-h-screen bg-gray-50 text-gray-900 font-inter">
+		<slot />
+		
+		<script is:inline>
+			// Scroll suave para los enlaces de navegación
+			document.addEventListener('DOMContentLoaded', function() {
+				// Scroll suave - solo para enlaces internos (#)
+				const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+				
+				navLinks.forEach(function(link) {
+					link.addEventListener('click', function(e) {
+						e.preventDefault();
+						const href = link.getAttribute('href');
+						if (href) {
+							const targetId = href.substring(1);
+							const targetElement = document.getElementById(targetId);
+							
+							if (targetElement) {
+								const rect = targetElement.getBoundingClientRect();
+								const offsetTop = window.pageYOffset + rect.top - 80;
+								window.scrollTo({
+									top: offsetTop,
+									behavior: 'smooth'
+								});
+							}
+						}
+					});
+				});
+
+				// Navegación activa basada en scroll - solo para la página principal
+				if (window.location.pathname === '/') {
+					const sections = document.querySelectorAll('section[id]');
+					const navItems = document.querySelectorAll('.nav-link');
+
+					function setActiveNavItem() {
+						const scrollPosition = window.scrollY + 150;
+
+						sections.forEach(function(section) {
+							const rect = section.getBoundingClientRect();
+							const sectionTop = window.pageYOffset + rect.top;
+							const sectionBottom = sectionTop + rect.height;
+							const sectionId = section.getAttribute('id');
+							const navItem = document.querySelector('.nav-link[href="/#' + sectionId + '"], .nav-link[href="#' + sectionId + '"]');
+
+							if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+								// Remover clase activa de todos los enlaces
+								navItems.forEach(function(item) {
+									item.classList.remove('text-orange-500', 'border-b-2', 'border-orange-500');
+									item.classList.add('text-gray-700');
+								});
+								
+								// Agregar clase activa al enlace actual
+								if (navItem) {
+									navItem.classList.remove('text-gray-700');
+									navItem.classList.add('text-orange-500', 'border-b-2', 'border-orange-500');
+								}
+							}
+						});
+					}
+
+					// Ejecutar al cargar la página
+					setActiveNavItem();
+
+					// Ejecutar al hacer scroll
+					let isScrolling = false;
+					window.addEventListener('scroll', function() {
+						if (!isScrolling) {
+							window.requestAnimationFrame(function() {
+								setActiveNavItem();
+								isScrolling = false;
+							});
+							isScrolling = true;
+						}
+					});
+				} else {
+					// Marcar página activa para otras páginas
+					const currentPath = window.location.pathname;
+					const navItems = document.querySelectorAll('.nav-link');
+					
+					navItems.forEach(function(item) {
+						const href = item.getAttribute('href');
+						if (href === currentPath || (currentPath === '/' && href === '/')) {
+							item.classList.remove('text-gray-700');
+							item.classList.add('text-orange-500', 'border-b-2', 'border-orange-500');
+						}
+					});
+				}
+
+				// Sistema de idiomas
+				const currentLang = localStorage.getItem('language') || 'es';
+				
+				function setLanguage(lang) {
+					localStorage.setItem('language', lang);
+					
+					// Actualizar botones de idioma
+					const langButtons = document.querySelectorAll('.language-btn');
+					langButtons.forEach(function(btn) {
+						if (btn.id === 'lang-' + lang) {
+							btn.classList.remove('text-gray-500');
+							btn.classList.add('text-gray-700', 'font-medium');
+						} else {
+							btn.classList.remove('text-gray-700', 'font-medium');
+							btn.classList.add('text-gray-500');
+						}
+					});
+					
+					// Actualizar contenido con atributos data-es y data-en (traducciones normales)
+					const elementsToTranslate = document.querySelectorAll('[data-es][data-en]');
+					elementsToTranslate.forEach(function(element) {
+						const text = element.getAttribute('data-' + lang);
+						if (text) {
+							element.textContent = text;
+						}
+					});
+					
+					// Actualizar contenido con plantillas dinámicas (año)
+					const elementsWithTemplates = document.querySelectorAll('[data-es-template][data-en-template]');
+					elementsWithTemplates.forEach(function(element) {
+						const template = element.getAttribute('data-' + lang + '-template');
+						if (template) {
+							const currentYear = new Date().getFullYear();
+							element.textContent = template.replace('YEAR', currentYear);
+						}
+					});
+				}
+
+				// Establecer idioma inicial
+				setLanguage(currentLang);
+
+				// Event listeners para botones de idioma
+				document.getElementById('lang-es').addEventListener('click', function() {
+					setLanguage('es');
+				});
+
+				document.getElementById('lang-en').addEventListener('click', function() {
+					setLanguage('en');
+				});
+			});
+		</script>
+	</body>
+</html>

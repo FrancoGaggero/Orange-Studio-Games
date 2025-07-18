@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navigation />
+  
+  <main class="pt-20 min-h-screen">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-16">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mb-6 animate-bounce">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </div>
+          <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-6 leading-tight py-2" data-es="Centro de Soporte" data-en="Support Center">
+            Centro de Soporte
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-es="Estamos aquí para ayudarte. Encuentra respuestas rápidas o contacta directamente con nuestro equipo" data-en="We're here to help you. Find quick answers or contact our team directly">
+            Estamos aquí para ayudarte. Encuentra respuestas rápidas o contacta directamente con nuestro equipo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Options -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Email Support -->
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300 group">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4" data-es="Soporte por Email" data-en="Email Support">Soporte por Email</h3>
+            <p class="text-gray-600 mb-6" data-es="Respuesta en 24 horas" data-en="Response within 24 hours">Respuesta en 24 horas</p>
+            <a href="mailto:orangegstudios@gmail.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+              <span data-es="Enviar Email" data-en="Send Email">Enviar Email</span>
+            </a>
+          </div>
+
+          <!-- FAQ -->
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300 group">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4" data-es="Preguntas Frecuentes" data-en="Frequently Asked Questions">Preguntas Frecuentes</h3>
+            <p class="text-gray-600 mb-6" data-es="Respuestas inmediatas" data-en="Immediate answers">Respuestas inmediatas</p>
+            <button onclick="scrollToFAQ()" class="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-teal-600 transform hover:scale-105 transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+              <span data-es="Ver FAQ" data-en="View FAQ">Ver FAQ</span>
+            </button>
+          </div>
+
+          <!-- Privacy -->
+          <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300 group md:col-span-2 lg:col-span-1">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4" data-es="Privacidad y Seguridad" data-en="Privacy & Security">Privacidad y Seguridad</h3>
+            <p class="text-gray-600 mb-6" data-es="Protección de datos" data-en="Data protection">Protección de datos</p>
+            <button onclick="scrollToPrivacy()" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-3 rounded-full hover:from-orange-600 hover:to-yellow-600 transform hover:scale-105 transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span data-es="Más Info" data-en="More Info">Más Info</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-4" data-es="Preguntas Frecuentes" data-en="Frequently Asked Questions">
+            Preguntas Frecuentes
+          </h2>
+        </div>
+        
+        <div class="space-y-6">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="w-full text-left" onclick="toggleFAQ(1)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800" data-es="¿Son seguros los juegos para niños?" data-en="Are the games safe for children?">¿Son seguros los juegos para niños?</h3>
+                <div class="w-6 h-6 text-gray-500 transform transition-transform duration-300" id="faq-icon-1">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="hidden mt-4 text-gray-600" id="faq-content-1" data-es="Sí, todos nuestros juegos están diseñados específicamente para niños sin contenido inapropiado, anuncios invasivos o compras no autorizadas." data-en="Yes, all our games are specifically designed for children without inappropriate content, invasive ads or unauthorized purchases.">
+              Sí, todos nuestros juegos están diseñados específicamente para niños sin contenido inapropiado, anuncios invasivos o compras no autorizadas.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="w-full text-left" onclick="toggleFAQ(2)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800" data-es="¿Los juegos funcionan sin internet?" data-en="Do the games work without internet?">¿Los juegos funcionan sin internet?</h3>
+                <div class="w-6 h-6 text-gray-500 transform transition-transform duration-300" id="faq-icon-2">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="hidden mt-4 text-gray-600" id="faq-content-2" data-es="La mayoría de nuestros juegos pueden jugarse sin conexión a internet una vez descargados, perfectos para viajes largos." data-en="Most of our games can be played without an internet connection once downloaded, perfect for long trips.">
+              La mayoría de nuestros juegos pueden jugarse sin conexión a internet una vez descargados, perfectos para viajes largos.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="w-full text-left" onclick="toggleFAQ(3)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800" data-es="¿Qué edades son apropiadas?" data-en="What ages are appropriate?">¿Qué edades son apropiadas?</h3>
+                <div class="w-6 h-6 text-gray-500 transform transition-transform duration-300" id="faq-icon-3">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="hidden mt-4 text-gray-600" id="faq-content-3" data-es="Nuestros juegos están diseñados para niños de 2 a 12 años, con diferentes niveles de dificultad adaptados a cada edad." data-en="Our games are designed for children aged 2 to 12 years, with different difficulty levels adapted to each age.">
+              Nuestros juegos están diseñados para niños de 2 a 12 años, con diferentes niveles de dificultad adaptados a cada edad.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="w-full text-left" onclick="toggleFAQ(4)">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-800" data-es="¿Cómo reportar un problema?" data-en="How to report a problem?">¿Cómo reportar un problema?</h3>
+                <div class="w-6 h-6 text-gray-500 transform transition-transform duration-300" id="faq-icon-4">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="hidden mt-4 text-gray-600" id="faq-content-4" data-es="Puedes contactarnos directamente por email a orangegstudios@gmail.com con detalles del problema y te ayudaremos rápidamente." data-en="You can contact us directly by email at orangegstudios@gmail.com with problem details and we'll help you quickly.">
+              Puedes contactarnos directamente por email a orangegstudios@gmail.com con detalles del problema y te ayudaremos rápidamente.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4" data-es="Privacidad y Seguridad" data-en="Privacy & Security">
+            Privacidad y Seguridad
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800" data-es="Eliminación de Cuenta" data-en="Account Deletion">Eliminación de Cuenta</h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed" data-es="Si deseas eliminar tu cuenta de usuario de cualquiera de nuestras aplicaciones, envíanos un email indicando el nombre de la aplicación y tu cuenta." data-en="If you wish to delete your user account from any of our applications, send us an email indicating the name of the application and your account.">
+              Si deseas eliminar tu cuenta de usuario de cualquiera de nuestras aplicaciones, envíanos un email indicando el nombre de la aplicación y tu cuenta.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800" data-es="Protección de Datos" data-en="Data Protection">Protección de Datos</h3>
+            </div>
+            <p class="text-gray-600 leading-relaxed" data-es="Mantenemos los más altos estándares de seguridad para proteger la información de nuestros usuarios, especialmente la de los niños." data-en="We maintain the highest security standards to protect our users' information, especially children's.">
+              Mantenemos los más altos estándares de seguridad para proteger la información de nuestros usuarios, especialmente la de los niños.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-gradient-to-br from-blue-500 to-purple-500">
+      <div class="max-w-4xl mx-auto px-8 text-center">
+        <div class="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+          <h2 class="text-3xl font-bold text-gray-800 mb-4" data-es="¿Aún necesitas ayuda?" data-en="Still need help?">¿Aún necesitas ayuda?</h2>
+          <p class="text-lg text-gray-600 mb-8" data-es="Nuestro equipo está listo para asistirte con cualquier consulta o problema" data-en="Our team is ready to assist you with any questions or problems">
+            Nuestro equipo está listo para asistirte con cualquier consulta o problema
+          </p>
+          <a href="mailto:orangegstudios@gmail.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-blue-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span data-es="Contactar Soporte" data-en="Contact Support">Contactar Soporte</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    function scrollToFAQ() {
+      document.getElementById('faq').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function scrollToPrivacy() {
+      document.getElementById('privacy').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    function toggleFAQ(id) {
+      const content = document.getElementById(`faq-content-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+</Layout>

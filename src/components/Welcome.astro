@@ -1,0 +1,179 @@
+---
+import Navigation from './Navigation.astro';
+import GameCard from './GameCard.astro';
+import Footer from './Footer.astro';
+---
+
+<Navigation />
+
+<main class="pt-20">
+  <!-- Hero Section -->
+  <section id="hero" class="bg-white py-12 text-center border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-8">
+      <h1 class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
+        Bienvenidos a Orange Studios Games
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed mt-8" data-es="Desarrollamos juegos educativos y divertidos para toda la familia" data-en="We develop educational and fun games for the whole family">
+        Desarrollamos juegos educativos y divertidos para toda la familia
+      </p>
+      <div class="flex justify-center gap-8 flex-wrap ">
+        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="🎮 Juegos Educativos" data-en="🎮 Educational Games">
+          🎮 Juegos Educativos
+        </span>
+        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="👨‍👩‍👧‍👦 Para Toda la Familia" data-en="👨‍👩‍👧‍👦 For the Whole Family">
+          👨‍👩‍👧‍👦 Para Toda la Familia
+        </span>
+        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="📱 Multiplataforma" data-en="📱 Multiplatform">
+          📱 Multiplataforma
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section id="games" class="py-12 bg-gray-50">
+    <div class="max-w-screen-xl mx-auto px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent relative inline-block pb-6 leading-tight py-1" data-es="NUESTROS JUEGOS" data-en="OUR GAMES">
+          NUESTROS JUEGOS
+        </h2>
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <GameCard
+          title="PIANO KIDS - MUSIC & SONGS"
+          titleEn="PIANO KIDS - MUSIC & SONGS"
+          category="MÚSICA"
+          categoryEn="MUSIC"
+          description="Es un juego musical divertido para niños. Aprenden a tocar diferentes instrumentos, canciones maravillosas y explorar diferentes sonidos! Este juego está especialmente diseñado para que los niños jueguen y aprendan por diversión. ¡Toda la familia puede desarrollar su talento musical y componer canciones juntos!"
+          descriptionEn="It's a fun musical game for kids. They learn to play different instruments, wonderful songs and explore different sounds! This game is specially designed for children to play and learn for fun. The whole family can develop their musical talent and compose songs together!"
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.kidspiano.music.songs"
+          imageUrl="/images/pianokids.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="KIDS LEARN SPELL & WRITE"
+          titleEn="KIDS LEARN SPELL & WRITE"
+          category="EDUCACIÓN"
+          categoryEn="EDUCATION"
+          description="Es un juego educativo para aprender a escribir, leer y mejorar la ortografía. El juego está diseñado para niños de todas las edades. Ayuda a los niños a aprender cómo deletrear y reconocer palabras, en inglés y español. Con imágenes divertidas para niños, este juego ayuda a mejorar sus habilidades de vocabulario todos los días."
+          descriptionEn="It's an educational game to learn to write, read and improve spelling. The game is designed for children of all ages. It helps children learn how to spell and recognize words, in English and Spanish. With fun images for kids, this game helps improve their vocabulary skills every day."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.kids.learn.spell.write.words"
+          imageUrl="/images/kislearn.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="MAGIC BOARD - DOODLE & COLOR"
+          titleEn="MAGIC BOARD - DOODLE & COLOR"
+          category="ENTRETENIMIENTO"
+          categoryEn="ENTERTAINMENT"
+          description="Es un juego entretenido que te permite colorear y dibujar de forma realista. ¡Prueba tus talentos artísticos! Usa tu imaginación para colorear y dibujar lo que se te ocurra. Promueve el desarrollo de la imaginación, las artes y aumenta la capacidad de concentración y habilidades motoras finas de los niños."
+          descriptionEn="It's an entertaining game that allows you to color and draw realistically. Test your artistic talents! Use your imagination to color and draw whatever comes to mind. It promotes the development of imagination, arts and increases children's concentration capacity and fine motor skills."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.magic.board.doodle.coloring"
+          imageUrl="/images/magicboard.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="SUSHI NINJA"
+          titleEn="SUSHI NINJA"
+          category="ENTRETENIMIENTO"
+          categoryEn="ENTERTAINMENT"
+          description="¡El juego de acción más emocionante y adictivo! ¡Corta pescado, no cortes bombas! Eso es todo lo que necesitas saber para comenzar con el adictivo juego de acción. ¡Tu dedo es el cuchillo afilado como una navaja! Corta el pescado con precisión y habilidad para convertirte en ¡Sushiman!"
+          descriptionEn="The most exciting and addictive action game! Cut fish, don't cut bombs! That's all you need to know to get started with the addictive action game. Your finger is the razor-sharp knife! Cut fish with precision and skill to become Sushiman!"
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.sushi.ninja"
+          imageUrl="/images/sushininja.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="BLOCKY RACING - TRAFFIC RACER"
+          titleEn="BLOCKY RACING - TRAFFIC RACER"
+          category="CARRERAS"
+          categoryEn="RACING"
+          description="¡Este es un nuevo juego de carreras 3D donde puedes conducir con tráfico en un mundo de bloques colorido! ¡Sal a la carretera, muestra tus habilidades de conducción y experimenta la adrenalina! ¡Conduce tan rápido como puedas y evita los choques!"
+          descriptionEn="This is a new 3D racing game where you can drive with traffic in a colorful block world! Hit the road, show your driving skills and experience the adrenaline! Drive as fast as you can and avoid crashes!"
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.blocky.racing"
+          imageUrl="/images/blockyracing.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="MUSICAL GAME FOR KIDS"
+          titleEn="MUSICAL GAME FOR KIDS"
+          category="MÚSICA"
+          categoryEn="MUSIC"
+          description="Es una aplicación especialmente creada para que todos los niños y niñas se acerquen a la música, puedan compartir grandes momentos con sus padres y divertirse mientras desarrollan habilidades musicales. Los niños pueden dar rienda suelta a su imaginación componiendo sus propias melodías en diferentes instrumentos."
+          descriptionEn="It's an application specially created for all boys and girls to get close to music, share great moments with their parents and have fun while developing musical skills. Children can unleash their imagination by composing their own melodies on different instruments."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.musical.game.kids"
+          imageUrl="/images/musicalgame.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="COLORING AND LEARN"
+          titleEn="COLORING AND LEARN"
+          category="CREATIVIDAD"
+          categoryEn="CREATIVITY"
+          description="¡Es un juego de colorear realista con más de 250 páginas con contenido educativo! ¡Toda la familia, padres e hijos tendrán horas de diversión juntos! El juego es muy divertido, simple y educativo para todas las edades."
+          descriptionEn="It's a realistic coloring game with over 250 pages of educational content! The whole family, parents and children will have hours of fun together! The game is very fun, simple and educational for all ages."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.coloring.learn.kids"
+          imageUrl="/images/coloring.png"
+          backgroundColor="#ffffff"
+        />
+
+        <GameCard
+          title="PRINCESS COLORING BOOK & GAMES"
+          titleEn="PRINCESS COLORING BOOK & GAMES"
+          category="CREATIVIDAD"
+          categoryEn="CREATIVITY"
+          description="Es un juego divertido para todas las edades que te permite vestir a las princesas, aprender música, tocar el piano, desafiar tu memoria, pintar y colorear de forma real, de la misma manera que en un papel o libro, usando diferentes opciones para pintar como pinceles, crayones o lápices."
+          descriptionEn="It's a fun game for all ages that lets you dress up princesses, learn music, play piano, challenge your memory, paint and color realistically, just like on paper or book, using different painting options like brushes, crayons or pencils."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.gamesforkids.coloring.princess"
+          imageUrl="/images/princess.png"
+          backgroundColor="#ffffff"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-orange-500 to-yellow-500">
+    <div class="max-w-4xl mx-auto px-8 text-center">
+      <div class="bg-white rounded-2xl p-8 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+        <div class="flex items-center justify-center mb-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center animate-pulse">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4" data-es="¿Quieres conocer más sobre nosotros?" data-en="Want to know more about us?">¿Quieres conocer más sobre nosotros?</h2>
+        <p class="text-lg text-gray-600 mb-8" data-es="Descubre nuestra historia, misión y compromiso con la educación infantil" data-en="Discover our story, mission and commitment to children's education">
+          Descubre nuestra historia, misión y compromiso con la educación infantil
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/about" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-orange-600 hover:to-yellow-600 transform hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span data-es="Conocer Más" data-en="Learn More">Conocer Más</span>
+          </a>
+          <a href="/support" class="inline-flex items-center gap-2 bg-white border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-orange-500 hover:text-white transform hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span data-es="Obtener Soporte" data-en="Get Support">Obtener Soporte</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<Footer />
+
+
