@@ -52,9 +52,41 @@ import Footer from './Footer.astro';
           playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.kidspiano.music.songs"
           imageUrl="/images/pianokids.png"
           backgroundColor="#ffffff"
-          downloads="5M+"
+          downloads="100 M+"
+          rating={4.5}
+          reviewsCount="700K+"
+        />
+
+
+
+		   <GameCard
+          title="COLORING AND LEARN"
+          titleEn="COLORING AND LEARN"
+          category="CREATIVIDAD"
+          categoryEn="CREATIVITY"
+          description="¡Es un juego de colorear realista con más de 250 páginas con contenido educativo! ¡Toda la familia, padres e hijos tendrán horas de diversión juntos! El juego es muy divertido, simple y educativo para todas las edades."
+          descriptionEn="It's a realistic coloring game with over 250 pages of educational content! The whole family, parents and children will have hours of fun together! The game is very fun, simple and educational for all ages."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.coloring.learn.kids"
+          imageUrl="/images/coloring.png"
+          backgroundColor="#ffffff"
+          downloads="6M+"
+          rating={4.5}
+          reviewsCount="28K+"
+        />
+
+        <GameCard
+          title="PRINCESS COLORING BOOK & GAMES"
+          titleEn="PRINCESS COLORING BOOK & GAMES"
+          category="CREATIVIDAD"
+          categoryEn="CREATIVITY"
+          description="Es un juego divertido para todas las edades que te permite vestir a las princesas, aprender música, tocar el piano, desafiar tu memoria, pintar y colorear de forma real, de la misma manera que en un papel o libro, usando diferentes opciones para pintar como pinceles, crayones o lápices."
+          descriptionEn="It's a fun game for all ages that lets you dress up princesses, learn music, play piano, challenge your memory, paint and color realistically, just like on paper or book, using different painting options like brushes, crayons or pencils."
+          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.gamesforkids.coloring.princess"
+          imageUrl="/images/princess.png"
+          backgroundColor="#ffffff"
+          downloads="7M+"
           rating={4.6}
-          reviewsCount="25K+"
+          reviewsCount="32K+"
         />
 
         <GameCard
@@ -132,36 +164,25 @@ import Footer from './Footer.astro';
           reviewsCount="20K+"
         />
 
-        <GameCard
-          title="COLORING AND LEARN"
-          titleEn="COLORING AND LEARN"
-          category="CREATIVIDAD"
-          categoryEn="CREATIVITY"
-          description="¡Es un juego de colorear realista con más de 250 páginas con contenido educativo! ¡Toda la familia, padres e hijos tendrán horas de diversión juntos! El juego es muy divertido, simple y educativo para todas las edades."
-          descriptionEn="It's a realistic coloring game with over 250 pages of educational content! The whole family, parents and children will have hours of fun together! The game is very fun, simple and educational for all ages."
-          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.coloring.learn.kids"
-          imageUrl="/images/coloring.png"
-          backgroundColor="#ffffff"
-          downloads="6M+"
-          rating={4.5}
-          reviewsCount="28K+"
-        />
-
-        <GameCard
-          title="PRINCESS COLORING BOOK & GAMES"
-          titleEn="PRINCESS COLORING BOOK & GAMES"
-          category="CREATIVIDAD"
-          categoryEn="CREATIVITY"
-          description="Es un juego divertido para todas las edades que te permite vestir a las princesas, aprender música, tocar el piano, desafiar tu memoria, pintar y colorear de forma real, de la misma manera que en un papel o libro, usando diferentes opciones para pintar como pinceles, crayones o lápices."
-          descriptionEn="It's a fun game for all ages that lets you dress up princesses, learn music, play piano, challenge your memory, paint and color realistically, just like on paper or book, using different painting options like brushes, crayons or pencils."
-          playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.gamesforkids.coloring.princess"
-          imageUrl="/images/princess.png"
-          backgroundColor="#ffffff"
-          downloads="7M+"
-          rating={4.6}
-          reviewsCount="32K+"
-        />
+     
       </div>
+    </div>
+  </section>
+
+  <!-- YouTube Section -->
+  <section class="py-10 bg-white">
+    <div class="max-w-screen-xl mx-auto px-8 text-center">
+     
+      <h2 class="text-2xl font-bold text-gray-800 mb-2" data-es="¡Visita nuestro canal de YouTube para ver más contenido y novedades!" data-en="Visit our YouTube channel for more content and news!">
+        ¡Visita nuestro canal de YouTube paxra ver más contenido y novedades!
+      </h2>
+      <p class="text-lg text-gray-600 mb-6" data-es="Tutoriales, lanzamientos y mucho más en video." data-en="Tutorials, launches and much more in video.">
+        Tutoriales, lanzamientos y mucho más en video.
+      </p>
+      <a href="https://www.youtube.com/@orangestudiosgames/videos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white border-2 border-red-500 text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-50 hover:border-red-600 hover:text-red-600 transform hover:scale-105 transition-all duration-300">
+        <img src="/images/logoyoutube.png" alt="YouTube" class="w-8 h-8 object-contain rounded" />
+        <span data-es="Ir al canal de YouTube" data-en="Go to YouTube channel">Ir al canal de YouTube</span>
+      </a>
     </div>
   </section>
 

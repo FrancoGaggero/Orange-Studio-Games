@@ -41,7 +41,7 @@ const {
         <img src={imageUrl} alt={title} class="w-auto h-full max-w-full object-contain transition-transform duration-300 rounded-lg" />
       </div>
       
-      <div class="p-5">
+      <div class="p-5 h-[calc(100%-8rem)] flex flex-col">
         <div class="mb-4">
           <h3 class="text-lg font-semibold text-gray-800 mb-2 leading-tight" data-es={title} data-en={titleEn || title}>{title}</h3>
           <div class="flex items-center gap-4">
@@ -50,9 +50,9 @@ const {
           </div>
         </div>
         
-        <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3" data-es={description} data-en={descriptionEn || description}>{description}</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-grow" data-es={description} data-en={descriptionEn || description}>{description}</p>
         
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mt-auto">
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" 
              class="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:from-blue-600 hover:to-green-600 hover:scale-105">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
