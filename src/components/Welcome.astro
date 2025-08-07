@@ -10,23 +10,44 @@ import Footer from './Footer.astro';
   <!-- Hero Section -->
   <section id="hero" class="bg-white py-12 text-center border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-8">
-		<h1 class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
+		<h1 class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-8 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
         Bienvenidos a Orange Studios Games
       </h1>
-      <p class="text-xl text-gray-600 mb-8 leading-relaxed mt-8" data-es="Desarrollamos juegos educativos y divertidos para toda la familia" data-en="We develop educational and fun games for the whole family">
-        Desarrollamos juegos educativos y divertidos para toda la familia
-      </p>
-      <div class="flex justify-center gap-8 flex-wrap ">
-        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="🎮 Juegos Educativos" data-en="🎮 Educational Games">
-          🎮 Juegos Educativos
-        </span>
-        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="👨‍👩‍👧‍👦 Para Toda la Familia" data-en="👨‍👩‍👧‍👦 For the Whole Family">
-          👨‍👩‍👧‍👦 Para Toda la Familia
-        </span>
-        <span class="bg-gradient-to-r from-orange-100 to-yellow-100 border-2 border-orange-200 px-6 py-3 rounded-full text-gray-800 font-medium transition-all duration-300 hover:from-orange-150 hover:to-yellow-150 hover:border-orange-300 hover:-translate-y-1" data-es="📱 Multiplataforma" data-en="📱 Multiplatform">
-          📱 Multiplataforma
-        </span>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-es="Innovación Educativa" data-en="Educational Innovation">Innovación Educativa</h3>
+                    <p class="text-gray-600" data-es="Creamos experiencias que combinan diversión y aprendizaje de manera natural" data-en="We create experiences that naturally combine fun and learning">Creamos experiencias que combinan diversión y aprendizaje de manera natural</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-es="Seguridad Familiar" data-en="Family Safety">Seguridad Familiar</h3>
+                    <p class="text-gray-600" data-es="Entornos seguros y apropiados para que los niños exploren y aprendan" data-en="Safe and appropriate environments for children to explore and learn">Entornos seguros y apropiados para que los niños exploren y aprendan</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2" data-es="Conexión Familiar" data-en="Family Connection">Conexión Familiar</h3>
+                    <p class="text-gray-600" data-es="Promovemos momentos de calidad entre padres e hijos a través del juego" data-en="We promote quality moments between parents and children through play">Promovemos momentos de calidad entre padres e hijos a través del juego</p>
+                  </div>
+                </div>
+              </div>
     </div>
   </section>
 
@@ -52,7 +73,7 @@ import Footer from './Footer.astro';
           playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.kidspiano.music.songs"
           imageUrl="/images/pianokids.png"
           backgroundColor="#ffffff"
-          downloads="100 M+"
+          downloads="350 M+"
           rating={4.5}
           reviewsCount="700K+"
         />
@@ -69,7 +90,7 @@ import Footer from './Footer.astro';
           playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.coloring.learn.kids"
           imageUrl="/images/coloring.png"
           backgroundColor="#ffffff"
-          downloads="6M+"
+          downloads="250M+"
           rating={4.5}
           reviewsCount="28K+"
         />
@@ -84,7 +105,7 @@ import Footer from './Footer.astro';
           playStoreUrl="https://play.google.com/store/apps/details?id=com.orange.gamesforkids.coloring.princess"
           imageUrl="/images/princess.png"
           backgroundColor="#ffffff"
-          downloads="7M+"
+          downloads="65M+"
           rating={4.6}
           reviewsCount="32K+"
         />
@@ -169,19 +190,21 @@ import Footer from './Footer.astro';
     </div>
   </section>
 
-  <!-- YouTube Section -->
+  <!-- All Games Section -->
   <section class="py-10 bg-white">
     <div class="max-w-screen-xl mx-auto px-8 text-center">
      
-      <h2 class="text-2xl font-bold text-gray-800 mb-2" data-es="¡Visita nuestro canal de YouTube para ver más contenido y novedades!" data-en="Visit our YouTube channel for more content and news!">
-        ¡Visita nuestro canal de YouTube paxra ver más contenido y novedades!
+      <h2 class="text-2xl font-bold text-gray-800 mb-2" data-es="¡Descubre todos nuestros juegos en Google Play!" data-en="Discover all our games on Google Play!">
+        ¡Descubre todos nuestros juegos en Google Play!
       </h2>
-      <p class="text-lg text-gray-600 mb-6" data-es="Tutoriales, lanzamientos y mucho más en video." data-en="Tutorials, launches and much more in video.">
-        Tutoriales, lanzamientos y mucho más en video.
+      <p class="text-lg text-gray-600 mb-6" data-es="Explora nuestra colección completa de juegos educativos y divertidos." data-en="Explore our complete collection of educational and fun games.">
+        Explora nuestra colección completa de juegos educativos y divertidos.
       </p>
-      <a href="https://www.youtube.com/@orangestudiosgames/videos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white border-2 border-red-500 text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-50 hover:border-red-600 hover:text-red-600 transform hover:scale-105 transition-all duration-300">
-        <img src="/images/logoyoutube.png" alt="YouTube" class="w-8 h-8 object-contain rounded" />
-        <span data-es="Ir al canal de YouTube" data-en="Go to YouTube channel">Ir al canal de YouTube</span>
+      <a href="https://play.google.com/store/apps/dev?id=5888460665412460525" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white border-2 border-green-500 text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 hover:border-green-600 hover:text-green-600 transform hover:scale-105 transition-all duration-300">
+        <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+        </svg>
+        <span data-es="Ver todos los juegos" data-en="View all games">Ver todos los juegos</span>
       </a>
     </div>
   </section>
