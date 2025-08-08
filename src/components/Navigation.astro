@@ -3,23 +3,171 @@
 ---
 
 <nav class="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 shadow-sm z-50 py-3">
-  <div class="max-w-screen-xl mx-auto flex justify-between items-center px-4 md:px-8">
-    <div class="flex items-center gap-4">
-      <img src="/images/logo-orange.png" alt="Orange Studios Games" class="h-10 w-auto" />
+  <div class="max-w-screen-xl mx-auto px-4 md:px-8">
+    <!-- Desktop y Mobile Header -->
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center gap-4">
+        <img src="/images/logo-orange.png" alt="Orange Studios Games" class="h-10 w-auto" />
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="INICIO" data-en="HOME">INICIO</a>
+        <a href="/#games" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="JUEGOS" data-en="GAMES">JUEGOS</a>
+        <a href="/about" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="ACERCA DE" data-en="ABOUT US">ACERCA DE</a>
+        <a href="/support" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="SOPORTE" data-en="SUPPORT">SOPORTE</a>
+        
+        <!-- Language Selector - Desktop -->
+        <div class="flex items-center gap-2 text-sm">
+          <img src="/images/language.png" alt="Language" class="w-6 h-6" />
+          <button id="lang-es" class="language-btn text-gray-700 font-medium hover:text-orange-500 transition-colors">Español</button>
+          <span class="text-gray-400">|</span>
+          <button id="lang-en" class="language-btn text-gray-500 hover:text-orange-500 transition-colors">English</button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden flex items-center justify-center w-10 h-10 text-gray-700 hover:text-orange-500 focus:outline-none transition-colors duration-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
-    <div class="flex items-center gap-4 md:gap-8">
-       <a href="/" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="INICIO" data-en="HOME">INICIO</a>
-      <a href="/#games" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="JUEGOS" data-en="GAMES">JUEGOS</a>
-      <a href="/about" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="ACERCA DE" data-en="ABOUT US">ACERCA DE</a>
-      <a href="/support" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-sm tracking-wider transition-colors duration-300" data-es="SOPORTE" data-en="SUPPORT">SOPORTE</a>
-      <div class="flex items-center gap-2 text-sm">
-        <img src="/images/language.png" alt="English" class="w-6 h-6" />
-        <button id="lang-es" class="language-btn text-gray-700 font-medium hover:text-orange-500 transition-colors">Español</button>
-        <span class="text-gray-400">|</span>
-        <button id="lang-en" class="language-btn text-gray-500 hover:text-orange-500 transition-colors">English</button>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-200 animate-fadeIn">
+      <div class="flex flex-col space-y-4 pt-4">
+        <!-- Mobile Navigation Links -->
+        <a href="/" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-base tracking-wider transition-colors duration-300 py-2 px-2" data-es="INICIO" data-en="HOME">INICIO</a>
+        <a href="/#games" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-base tracking-wider transition-colors duration-300 py-2 px-2" data-es="JUEGOS" data-en="GAMES">JUEGOS</a>
+        <a href="/about" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-base tracking-wider transition-colors duration-300 py-2 px-2" data-es="ACERCA DE" data-en="ABOUT US">ACERCA DE</a>
+        <a href="/support" class="nav-link text-gray-700 hover:text-orange-500 font-medium text-base tracking-wider transition-colors duration-300 py-2 px-2" data-es="SOPORTE" data-en="SUPPORT">SOPORTE</a>
+        
+        <!-- Language Selector - Mobile -->
+        <div class="flex items-center justify-center gap-3 pt-4 border-t border-gray-100">
+          <img src="/images/language.png" alt="Language" class="w-6 h-6" />
+          <div class="flex items-center gap-2 text-sm">
+            <button id="lang-es-mobile" class="language-btn text-gray-700 font-medium hover:text-orange-500 transition-colors px-3 py-1 rounded">Español</button>
+            <span class="text-gray-400">|</span>
+            <button id="lang-en-mobile" class="language-btn text-gray-500 hover:text-orange-500 transition-colors px-3 py-1 rounded">English</button>
+          </div>
+        </div>
       </div>
     </div>
-    
   </div>
 </nav>
+
+<style>
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Smooth transitions for mobile menu */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Active state for language buttons */
+  .language-btn.active {
+    color: #ea580c;
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    // Toggle mobile menu
+    mobileMenuButton?.addEventListener('click', function() {
+      const isHidden = mobileMenu?.classList.contains('hidden');
+      
+      if (isHidden) {
+        mobileMenu?.classList.remove('hidden');
+        menuIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('hidden');
+      } else {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      });
+    });
+
+    // Language switching functionality
+    function switchLanguage(lang: string) {
+      const elements = document.querySelectorAll('[data-es][data-en]');
+      elements.forEach(element => {
+        const text = lang === 'es' ? element.getAttribute('data-es') : element.getAttribute('data-en');
+        if (text) {
+          element.textContent = text;
+        }
+      });
+
+      // Update active state for language buttons
+      const allLangButtons = document.querySelectorAll('.language-btn');
+      allLangButtons.forEach(btn => btn.classList.remove('active'));
+      
+      if (lang === 'es') {
+        document.getElementById('lang-es')?.classList.add('active');
+        document.getElementById('lang-es-mobile')?.classList.add('active');
+      } else {
+        document.getElementById('lang-en')?.classList.add('active');
+        document.getElementById('lang-en-mobile')?.classList.add('active');
+      }
+
+      // Save language preference
+      localStorage.setItem('preferred-language', lang);
+    }
+
+    // Language button events - Desktop
+    document.getElementById('lang-es')?.addEventListener('click', () => switchLanguage('es'));
+    document.getElementById('lang-en')?.addEventListener('click', () => switchLanguage('en'));
+
+    // Language button events - Mobile
+    document.getElementById('lang-es-mobile')?.addEventListener('click', () => switchLanguage('es'));
+    document.getElementById('lang-en-mobile')?.addEventListener('click', () => switchLanguage('en'));
+
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferred-language') || 'es';
+    switchLanguage(savedLang);
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const target = event.target as Element;
+      const isClickInsideNav = mobileMenuButton?.contains(target) || mobileMenu?.contains(target);
+      if (!isClickInsideNav && !mobileMenu?.classList.contains('hidden')) {
+        mobileMenu?.classList.add('hidden');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+      }
+    });
+  });
+</script>
 
