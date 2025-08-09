@@ -10,11 +10,11 @@ import Footer from './Footer.astro';
   <!-- Hero Section -->
   <section id="hero" class="bg-white py-12 text-center border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-8">
-		<h1 class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-8 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
-        Bienvenidos a Orange Studios Games
+		<h1 id="hero-title" class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-8 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
+        <!-- El texto se escribirá aquí dinámicamente -->
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                <div class="flex items-start gap-4">
+                <div class="hero-card flex items-start gap-4">
                   <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
                     <img src="/images/icon4.png" alt="innovation" class="w-8 h-8" />
                   </div>
@@ -23,7 +23,7 @@ import Footer from './Footer.astro';
                     <p class="text-gray-600" data-es="Creamos experiencias que combinan diversión y aprendizaje de manera natural" data-en="We create experiences that naturally combine fun and learning">Creamos experiencias que combinan diversión y aprendizaje de manera natural</p>
                   </div>
                 </div>
-                <div class="flex items-start gap-4">
+                <div class="hero-card flex items-start gap-4">
                   <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
                     <img src="/images/icon5.png" alt="security" class="w-8 h-8" />
                   </div>
@@ -32,7 +32,7 @@ import Footer from './Footer.astro';
                     <p class="text-gray-600" data-es="Entornos seguros y apropiados para que los niños exploren y aprendan" data-en="Safe and appropriate environments for children to explore and learn">Entornos seguros y apropiados para que los niños exploren y aprendan</p>
                   </div>
                 </div>
-                <div class="flex items-start gap-4">
+                <div class="hero-card flex items-start gap-4">
                   <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0 transform hover:rotate-12 transition-transform duration-300">
                     <img src="/images/icon6.png" alt="family" class="w-8 h-8" />
                   </div>
@@ -98,7 +98,7 @@ import Footer from './Footer.astro';
           <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <img src="/images/icon2.png" alt="heart" />
           </div>
-          <h3 class="text-3xl font-bold text-gray-800 mb-2">+100M</h3>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2" data-es="+100 millones" data-en="+100 million">+100 millones</h3>
           <p class="text-lg font-semibold text-gray-700 mb-2" data-es="Usuarios Activos" data-en="Active Users">Usuarios Activos</p>
           <p class="text-gray-600" data-es="Mensuales en todo el mundo" data-en="Monthly worldwide">Mensuales en todo el mundo</p>
         </div>
@@ -306,5 +306,124 @@ import Footer from './Footer.astro';
 </main>
 
 <Footer />
+
+<!-- Anime.js Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+<style>
+  /* Animación inicial para las tarjetas del hero */
+  .hero-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .hero-card:nth-child(1) {
+    animation-delay: 2.2s; /* Después del typewriter */
+  }
+
+  .hero-card:nth-child(2) {
+    animation-delay: 2.4s;
+  }
+
+  .hero-card:nth-child(3) {
+    animation-delay: 2.6s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Cursor del typewriter */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .typewriter-cursor {
+    color: #ea580c;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const heroTitle = document.getElementById('hero-title') as HTMLElement;
+    
+    // Textos en español e inglés
+    const texts: { [key: string]: string } = {
+      es: "Bienvenidos a Orange Studios Games",
+      en: "Welcome to Orange Studios Games"
+    };
+    
+    // Obtener idioma guardado o usar español por defecto
+    const savedLang = localStorage.getItem('preferred-language') || 'es';
+    const currentText = texts[savedLang];
+    
+    // Limpiar el contenido inicial
+    if (heroTitle) {
+      heroTitle.textContent = '';
+    }
+    
+    // Crear cursor parpadeante
+    const cursor = document.createElement('span');
+    cursor.textContent = '|';
+    cursor.style.animation = 'blink 1s infinite';
+    cursor.className = 'typewriter-cursor';
+    
+    // Función de efecto typewriter
+    function typeWriter(text: string, element: HTMLElement, speed: number = 100): Promise<void> {
+      return new Promise((resolve) => {
+        let i = 0;
+        element.appendChild(cursor);
+        
+        function type() {
+          if (i < text.length) {
+            element.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            // Remover cursor después de completar la escritura
+            setTimeout(() => {
+              cursor.remove();
+              resolve();
+            }, 1000);
+          }
+        }
+        
+        type();
+      });
+    }
+    
+    // Ejecutar el efecto de escritura
+    if (heroTitle && currentText) {
+      typeWriter(currentText, heroTitle, 80);
+    }
+    
+    // Actualizar el texto cuando cambie el idioma
+    function updateHeroTitle(lang: string) {
+      const newText = texts[lang];
+      if (heroTitle && heroTitle.textContent && newText) {
+        if (heroTitle.textContent.replace('|', '').trim() !== newText) {
+          // Solo actualizar si el texto es diferente
+          heroTitle.textContent = '';
+          typeWriter(newText, heroTitle, 50); // Más rápido en cambio de idioma
+        }
+      }
+    }
+    
+    // Escuchar cambios de idioma
+    const langButtons = document.querySelectorAll('.language-btn');
+    langButtons.forEach(button => {
+      button.addEventListener('click', function(this: HTMLElement) {
+        const lang = this.id.includes('es') ? 'es' : 'en';
+        setTimeout(() => updateHeroTitle(lang), 100);
+      });
+    });
+  });
+</script>
 
 
