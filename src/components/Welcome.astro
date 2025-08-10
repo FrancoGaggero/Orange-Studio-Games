@@ -10,7 +10,7 @@ import Footer from './Footer.astro';
   <!-- Hero Section -->
   <section id="hero" class="bg-white py-12 text-center border-b border-gray-200">
     <div class="max-w-4xl mx-auto px-8">
-		<h1 id="hero-title" class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-8 leading-tight py-2" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
+		<h1 id="hero-title" class="text-4xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-8 leading-tight py-2 opacity-0" data-es="Bienvenidos a Orange Studios Games" data-en="Welcome to Orange Studios Games">
         <!-- El texto se escribirá aquí dinámicamente -->
       </h1>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
@@ -56,16 +56,8 @@ import Footer from './Footer.astro';
       <div class="absolute bottom-32 right-1/4 w-8 h-8 bg-white/20 rounded-full animate-bounce" style="animation-delay: 1.5s"></div>
       <div class="absolute bottom-28 right-1/8 w-8 h-8 bg-white/20 rounded-full animate-bounce" style="animation-delay: 1.5s"></div>
       <div class="absolute bottom-10 left-1/4 w-14 h-14 bg-white/10 rounded-full animate-pulse" style="animation-delay: 1s"></div>
-      <!-- Líneas diagonales -->
-    <div class="absolute top-20 left-1/3 w-6 h-6 bg-white/15 rotate-45 animate-pulse" style="animation-delay: 2s"></div>
-    <div class="absolute bottom-16 right-12 w-10 h-10 bg-white/10 rotate-12 animate-bounce" style="animation-delay: 2.5s"></div>
-      <!-- mas formas -->
-      <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-      <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
-      <div class="absolute top-32 right-16 w-12 h-12 bg-white/15 rounded-full animate-bounce" style="animation-delay: 0.5s"></div>
       
-    </div>
-      <!-- Formas geométricas -->
+      <!-- Líneas diagonales -->
       <div class="absolute top-20 left-1/3 w-6 h-6 bg-white/15 rotate-45 animate-pulse" style="animation-delay: 2s"></div>
       <div class="absolute bottom-16 right-12 w-10 h-10 bg-white/10 rotate-12 animate-bounce" style="animation-delay: 2.5s"></div>
     </div>
@@ -98,7 +90,7 @@ import Footer from './Footer.astro';
           <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <img src="/images/icon2.png" alt="heart" />
           </div>
-          <h3 class="text-3xl font-bold text-gray-800 mb-2" data-es="+100 millones" data-en="+100 million">+100 millones</h3>
+          <h3 class="text-3xl font-bold text-gray-800 mb-2">+100M</h3>
           <p class="text-lg font-semibold text-gray-700 mb-2" data-es="Usuarios Activos" data-en="Active Users">Usuarios Activos</p>
           <p class="text-gray-600" data-es="Mensuales en todo el mundo" data-en="Monthly worldwide">Mensuales en todo el mundo</p>
         </div>
@@ -122,10 +114,10 @@ import Footer from './Footer.astro';
   <section id="games" class="py-12 bg-gray-50">
     <div class="max-w-screen-xl mx-auto px-8">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent relative inline-block pb-6 leading-tight py-1" data-es="NUESTROS JUEGOS" data-en="OUR GAMES">
+        <h2 class="text-3xl font-bold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent mb-4 leading-tight py-1" data-es="NUESTROS JUEGOS" data-en="OUR GAMES">
           NUESTROS JUEGOS
         </h2>
-        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+        <div class="w-16 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full mx-auto"></div>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -307,123 +299,101 @@ import Footer from './Footer.astro';
 
 <Footer />
 
-<!-- Anime.js Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-
-<style>
-  /* Animación inicial para las tarjetas del hero */
-  .hero-card {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  .hero-card:nth-child(1) {
-    animation-delay: 2.2s; /* Después del typewriter */
-  }
-
-  .hero-card:nth-child(2) {
-    animation-delay: 2.4s;
-  }
-
-  .hero-card:nth-child(3) {
-    animation-delay: 2.6s;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Cursor del typewriter */
-  @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-  
-  .typewriter-cursor {
-    color: #ea580c;
-    font-weight: bold;
-  }
-</style>
-
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.getElementById('hero-title') as HTMLElement;
+document.addEventListener('DOMContentLoaded', function() {
+  const heroTitle = document.getElementById('hero-title');
+  
+  if (!heroTitle) return;
+
+  const texts = {
+    es: "Bienvenidos a Orange Studios Games",
+    en: "Welcome to Orange Studios Games"
+  };
+  
+  // Obtener idioma guardado o usar español por defecto
+  const savedLang = localStorage.getItem('preferred-language') || 'es';
+  let currentText = texts[savedLang as keyof typeof texts];
+  
+  function typeWriter(text: string, element: HTMLElement, speed: number = 100) {
+    element.textContent = '';
+    element.style.opacity = '1'; // Mostrar el elemento antes de comenzar
+    let i = 0;
     
-    // Textos en español e inglés
-    const texts: { [key: string]: string } = {
-      es: "Bienvenidos a Orange Studios Games",
-      en: "Welcome to Orange Studios Games"
-    };
-    
-    // Obtener idioma guardado o usar español por defecto
-    const savedLang = localStorage.getItem('preferred-language') || 'es';
-    const currentText = texts[savedLang];
-    
-    // Limpiar el contenido inicial
-    if (heroTitle) {
-      heroTitle.textContent = '';
-    }
-    
-    // Crear cursor parpadeante
-    const cursor = document.createElement('span');
-    cursor.textContent = '|';
-    cursor.style.animation = 'blink 1s infinite';
-    cursor.className = 'typewriter-cursor';
-    
-    // Función de efecto typewriter
-    function typeWriter(text: string, element: HTMLElement, speed: number = 100): Promise<void> {
-      return new Promise((resolve) => {
-        let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        // Agregar cursor parpadeante al final
+        const cursor = document.createElement('span');
+        cursor.textContent = '|';
+        cursor.style.color = '#ea580c';
+        cursor.style.fontWeight = 'bold';
+        cursor.style.animation = 'blink 1s infinite';
         element.appendChild(cursor);
         
-        function type() {
-          if (i < text.length) {
-            element.insertBefore(document.createTextNode(text.charAt(i)), cursor);
-            i++;
-            setTimeout(type, speed);
-          } else {
-            // Remover cursor después de completar la escritura
-            setTimeout(() => {
-              cursor.remove();
-              resolve();
-            }, 1000);
+        // Quitar cursor después de 3 segundos
+        setTimeout(() => {
+          if (cursor.parentNode) {
+            cursor.remove();
           }
-        }
-        
-        type();
-      });
-    }
-    
-    // Ejecutar el efecto de escritura
-    if (heroTitle && currentText) {
-      typeWriter(currentText, heroTitle, 80);
-    }
-    
-    // Actualizar el texto cuando cambie el idioma
-    function updateHeroTitle(lang: string) {
-      const newText = texts[lang];
-      if (heroTitle && heroTitle.textContent && newText) {
-        if (heroTitle.textContent.replace('|', '').trim() !== newText) {
-          // Solo actualizar si el texto es diferente
-          heroTitle.textContent = '';
-          typeWriter(newText, heroTitle, 50); // Más rápido en cambio de idioma
-        }
+        }, 3000);
       }
     }
     
-    // Escuchar cambios de idioma
+    type();
+  }
+
+  // Iniciar typewriter después de un pequeño delay
+  setTimeout(() => {
+    typeWriter(currentText, heroTitle, 80);
+  }, 500);
+  
+  // Escuchar cambios de idioma
+  setTimeout(() => {
     const langButtons = document.querySelectorAll('.language-btn');
     langButtons.forEach(button => {
-      button.addEventListener('click', function(this: HTMLElement) {
+      button.addEventListener('click', function (this: HTMLElement) {
         const lang = this.id.includes('es') ? 'es' : 'en';
-        setTimeout(() => updateHeroTitle(lang), 100);
+        setTimeout(() => {
+          typeWriter(texts[lang], heroTitle, 50);
+        }, 100);
       });
     });
-  });
+  }, 1000);
+});
 </script>
 
+<style>
+/* Animación inicial para las tarjetas del hero */
+.hero-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
 
+.hero-card:nth-child(1) {
+  animation-delay: 2.2s; /* Después del typewriter */
+}
+
+.hero-card:nth-child(2) {
+  animation-delay: 2.4s;
+}
+
+.hero-card:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+</style>
